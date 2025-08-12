@@ -10,3 +10,4 @@
 * [自然数は全順序集合](./LinearOrder.md)
 * [順序は決定可能](./DecidableOrd.md)
 * [自然数の引き算](./Sub.md)
+* [整除関係](./Dvd.md)
