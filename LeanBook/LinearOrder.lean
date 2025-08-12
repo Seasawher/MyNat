@@ -22,6 +22,12 @@ theorem MyNat.eq_zero_or_pos (n : MyNat) : n = 0 ∨ 0 < n := by
   dsimp [(· < ·)]
   grind
 
+/-- 0より小さい自然数は存在しない -/
+@[simp, grind =>]
+theorem MyNat.not_lt_zero (n : MyNat) : ¬n < 0 := by
+  dsimp [(· < ·)]
+  grind
+
 /- ## 広義順序を等式と狭義順序で書き換える -/
 
 @[grind →]
@@ -81,6 +87,7 @@ theorem MyNat.add_one_le_of_lt {a b : MyNat} (h : a < b) : a + 1 ≤ b := by
 theorem MyNat.lt_of_add_one_le {m n : MyNat} (h : n + 1 ≤ m) : n < m := by
   grind
 
+@[grind =]
 theorem MyNat.lt_iff_add_one_le {m n : MyNat} : n < m ↔ n + 1 ≤ m := by
   constructor <;> grind [add_one_le_of_lt, lt_of_add_one_le]
 
@@ -95,3 +102,9 @@ theorem MyNat.le_total (a b : MyNat) : a ≤ b ∨ b ≤ a := by
 
 instance : Lean.Grind.LinearOrder MyNat where
   le_total := MyNat.le_total
+
+/- ## 系: 全順序性から -/
+
+@[grind _=_]
+theorem MyNat.not_le (m n : MyNat) : ¬ n ≤ m ↔ m < n := by
+  constructor <;> grind

@@ -1,4 +1,4 @@
-import LeanBook.LinearOrder --#
+import LeanBook.DecidableOrd --#
 /- # 自然数の引き算 -/
 
 /- ## 引き算の定義 -/
