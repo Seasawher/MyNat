@@ -6,7 +6,6 @@ import LeanBook.Preorder --#
 variable {m n k : MyNat}
 
 /-- `a ≤ b`から和の等式を導く -/
-@[grind <=]
 theorem MyNat.le.dest (h : n ≤ m) : ∃ k, n + k = m := by
   induction h with
   | refl => exists 0
@@ -25,9 +24,8 @@ theorem MyNat.le.intro (h : n + k = m) : n ≤ m := by
   induction k with grind
 
 /-- 順序関係`n ≤ m`を足し算で書き換える -/
-@[grind =]
 theorem MyNat.le_iff_add : n ≤ m ↔ ∃ k, n + k = m := by
-  constructor <;> grind
+  constructor <;> grind [MyNat.le.dest]
 
 /- ## 足し算は順序関係を保ち、キャンセル可能 -/
 

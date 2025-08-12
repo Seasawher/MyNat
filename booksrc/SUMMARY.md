@@ -7,3 +7,4 @@
 * [自然数は前順序集合](./Preorder.md)
 * [前順序と足し算は整合する](./OrderedAdd.md)
 * [自然数は半順序集合](./PartialOrder.md)
+* [自然数は全順序集合](./LinearOrder.md)
