@@ -5,3 +5,5 @@
 * [自然数は可換な半環](./CommSemiring.md)
 * [足し算はキャンセル可能](./AddCancel.md)
 * [自然数は前順序集合](./Preorder.md)
+* [前順序と足し算は整合する](./OrderedAdd.md)
+* [自然数は半順序集合](./PartialOrder.md)

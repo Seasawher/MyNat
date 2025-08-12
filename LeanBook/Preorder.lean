@@ -52,5 +52,6 @@ instance : Trans (· ≤ · : MyNat → MyNat → Prop) (· ≤ ·) (· ≤ ·) 
 
 instance : Lean.Grind.Preorder MyNat where
   le := (· ≤ ·)
+  lt := fun a b => a ≤ b ∧ ¬b ≤ a -- `LT`のインスタンスも定義する
   le_refl := MyNat.le_refl
   le_trans := MyNat.le_trans
