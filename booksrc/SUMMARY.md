@@ -8,3 +8,4 @@
 * [前順序と足し算は整合する](./OrderedAdd.md)
 * [自然数は半順序集合](./PartialOrder.md)
 * [自然数は全順序集合](./LinearOrder.md)
+* [順序は決定可能](./DecidableOrd.md)

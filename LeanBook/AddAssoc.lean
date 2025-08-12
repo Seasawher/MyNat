@@ -18,7 +18,7 @@ def MyNat.add (m n : MyNat) : MyNat :=
 instance : Add MyNat where
   add := MyNat.add
 
-/- ## OfNat インスタンスを定義するなどの準備 -/
+/- ## OfNat インスタンスを定義する -/
 
 /-- `Nat`の項から対応する`MyNat`の項を得る
 ただし`Nat`はLean組み込みの自然数の型 -/
@@ -31,6 +31,16 @@ def MyNat.ofNat (n : Nat) : MyNat :=
 @[default_instance]
 instance (n : Nat) : OfNat MyNat n where
   ofNat := MyNat.ofNat n
+
+/-- コンストラクタと数値リテラルの表すものが等しいことを保証する -/
+@[simp]
+theorem MyNat.zero_ctor : MyNat.zero = 0 := by rfl
+
+/-- コンストラクタと数値リテラルの表すものが等しいことを保証する -/
+@[simp]
+theorem MyNat.succ_ctor (n : MyNat) : MyNat.succ n = n + 1 := by rfl
+
+/- ## Repr インスタンスを定義する -/
 
 /-- `MyNat`型の項をLean組み込みの`Nat`の項に変換する
 注意：返り値の型はLean標準の`Nat` -/
