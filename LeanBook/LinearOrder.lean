@@ -94,11 +94,11 @@ theorem MyNat.lt_iff_add_one_le {m n : MyNat} : n < m ↔ n + 1 ≤ m := by
 /- ## 自然数は全順序 -/
 
 theorem MyNat.lt_or_ge (a b : MyNat) : a < b ∨ b ≤ a := by
-  induction a with grind [MyNat.lt_iff_add_one_le]
+  induction a with grind
 
 @[grind <=]
 theorem MyNat.le_total (a b : MyNat) : a ≤ b ∨ b ≤ a := by
-  induction a with grind [MyNat.lt_iff_add_one_le]
+  induction a with grind
 
 instance : Lean.Grind.LinearOrder MyNat where
   le_total := MyNat.le_total

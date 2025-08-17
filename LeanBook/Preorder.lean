@@ -50,8 +50,9 @@ theorem MyNat.le_trans (hnm : n ≤ m) (hmk : m ≤ k) : n ≤ k := by
 instance : Trans (· ≤ · : MyNat → MyNat → Prop) (· ≤ ·) (· ≤ ·) where
   trans := MyNat.le_trans
 
+instance : LT MyNat where
+  lt := fun a b => a ≤ b ∧ ¬b ≤ a
+
 instance : Lean.Grind.Preorder MyNat where
-  le := (· ≤ ·)
-  lt := fun a b => a ≤ b ∧ ¬b ≤ a -- `LT`のインスタンスも定義する
   le_refl := MyNat.le_refl
   le_trans := MyNat.le_trans
